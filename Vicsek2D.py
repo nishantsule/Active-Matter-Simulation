@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 class Vicsek2D:
-    def __init__(self, N, eta, r, v):
+    def __init__(self, N, eta):
         # Initialize simulation
         self.L = 25  # length of the square 2D region to be simulated
         self.N = N  # number of particles in the 2D region
@@ -20,6 +20,24 @@ class Vicsek2D:
         self.vel = np.zeros((self.N, 2))  # initialize velocity array
         self.vel[:, 0] = self.v * np.cos(self.theta)  # velocity along x
         self.vel[:, 1] = self.v * np.sin(self.theta)  # velocity along y
+        self.tt = 20  # total number of time steps
+
+    def main(self):
+        # Setup plots
+        plt.ion()
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        fig.show()
+        fig.tight_layout()
+        fig.canvas.draw()
+        for nn in range(self.tt):
+            ax.clear()
+            ax.quiver(self.pos[:, 0], self.pos[:, 1], self.vel[:, 0], self.vel[:, 1])
+            fig.canvas.draw()
+            self.update()
+
+    def update(self):
+        # Update position and velocity
 
 
 # Ask user for parameters
