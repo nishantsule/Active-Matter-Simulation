@@ -44,7 +44,6 @@ class Vicsek2D:
             self.update()
 
     def update(self):
-        # Update position and velocity
 
         # Generate the set of random movements dTheta from [-eta/2, eta/2]
         noise = (np.random.rand(self.N) - 0.5) * self.eta
