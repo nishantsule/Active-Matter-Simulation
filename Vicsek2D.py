@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 class Vicsek2D:
     def __init__(self, N, eta):
         # Initialize simulation
-        self.L = 25  # length of the square 2D region to be simulated
+        self.L = 20  # length of the square 2D region to be simulated
         self.halfL = self.L / 2  # half of length (used later for PBCs)
         self.N = N  # number of particles in the 2D region
         self.rho = N/self.L**2  # density of particles in the simulation
@@ -22,7 +22,7 @@ class Vicsek2D:
         self.vel = np.zeros((self.N, 2))  # initialize velocity array
         self.vel[:, 0] = self.v * np.cos(self.theta)  # velocity along x
         self.vel[:, 1] = self.v * np.sin(self.theta)  # velocity along y
-        self.tt = 50  # total number of time steps
+        self.tt = 200  # total number of time steps
         self.rparts = np.eye(N, dtype=np.bool)  # matrix representing particles within distance r
 
     def main(self):
