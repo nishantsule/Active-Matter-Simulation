@@ -1,4 +1,5 @@
 # Following code implements the Vicsek model in 2D from PRL 75 1226 (1995)
+# For possible use in AM 115
 
 # Importing packages
 import numpy as np
