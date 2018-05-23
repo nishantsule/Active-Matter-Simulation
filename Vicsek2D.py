@@ -99,9 +99,9 @@ class Vicsek2D:
 
 
 # Ask user for parameters
-print("We will simulate a square box of size 25")
-N = int(input("Enter the number of particles you want in the box: "))
-eta = float(input("Enter the maximum noise in the system: "))
+N = int(input("Enter the number of particles you want in the box (try 200): "))
+eta = float(input("Enter the maximum noise in the system (try 0.2): "))
 v2d = Vicsek2D(N, eta)
+print("Box size =", v2d.L)
 print("Particle density =", v2d.rho)
 v2d.main()
